@@ -3,6 +3,8 @@ class Item < ApplicationRecord
   has_many :rentals, dependent: :destroy
   has_many :reviews, through: :rentals
 
+  has_many_attached :photos
+
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 6 }
   validates :category, presence: true
