@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/category-browser" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class="page-container">
+      <%= render "shared/navbar" %>
+      <%= render "shared/category-browser" %>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

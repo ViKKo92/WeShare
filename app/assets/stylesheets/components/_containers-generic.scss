@@ -4,14 +4,16 @@
   justify-content: space-between;
   align-items: start;
   background-color: #fff;
- }
+  margin: auto;
+}
 
  .main-container-block {
   width: 90%;
   display: block;
   justify-content: center;
   background-color: #fff;
- }
+  margin: auto;
+}
 
  .grid-container {
   width: 100%;
@@ -20,4 +22,10 @@
   grid-template-rows: auto;
   grid-gap: 15px;
   background-color: #fff;
- }
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
