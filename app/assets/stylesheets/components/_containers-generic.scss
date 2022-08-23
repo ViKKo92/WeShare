@@ -3,12 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  background-color: #fff;
  }
 
  .main-container-block {
   width: 90%;
   display: block;
   justify-content: center;
+  background-color: #fff;
  }
 
  .grid-container {
@@ -17,5 +19,5 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 15px;
+  background-color: #fff;
  }
- 

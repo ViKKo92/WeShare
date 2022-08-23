@@ -1,0 +1,22 @@
+
+<div class="main-container-flex">
+  <div class="grid-container">
+
+    <% @items.each do |item| %>
+      <div class="item-card">
+        <%= image_tag "powerdrill.jpeg" %>
+        <div class="card-body">
+          <div>
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text">Only €<%= item.price_per_day %> per day </p>
+          </div>
+          <div>
+            <%= image_tag "map-pin.jpg", class: "map-pin" %>
+            <%= rand(1..20) %>km
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

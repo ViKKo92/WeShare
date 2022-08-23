@@ -1,0 +1,23 @@
+.item-card {
+  width: 305px;
+  height: 389px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 2px;
+  border-radius: 4px 4px 4px 4px;
+  img {
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+
+  }
+  .card-body {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 20%;
+    padding: 10px;
+    .map-pin {
+      height: 24px;
+      width: 24px;
+
+    }
+  }
+}
