@@ -1,0 +1,20 @@
+ .main-container-flex {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+ }
+
+ .main-container-block {
+  width: 90%;
+  display: block;
+  justify-content: center;
+ }
+
+ .grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+ }
