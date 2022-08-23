@@ -3,12 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  margin: auto;
  }
 
  .main-container-block {
   width: 90%;
   display: block;
   justify-content: center;
+  margin: auto;
  }
 
  .grid-container {
@@ -18,4 +20,9 @@
   grid-template-rows: auto;
   grid-gap: 15px;
  }
- 
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
