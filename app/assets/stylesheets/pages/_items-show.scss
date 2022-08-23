@@ -1,0 +1,116 @@
+ .itemshow-left {
+  width: 600px;
+  display: block;
+  justify-content: left;
+  margin-bottom: 15px;
+
+  p {
+    text-align: left;
+  }
+
+  img {
+    width: 500px;
+    height: 500px;
+  }
+ }
+
+ .itemshow-right {
+  width: 800px;
+  display: block;
+  align-items: flex-start;
+  justify-content: left;
+  margin-bottom: 15px;
+
+  button {
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+  }
+ }
+
+ .itemshow-header {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    text-align: left;
+    padding: 0px;
+  }
+
+  p {
+    font-size: 26px;
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+  }
+ }
+
+ .itemshow-description {
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+  p {
+    font-size: 16px;
+  }
+ }
+
+ .itemshow-reviews-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .itemshow-scroll-chevrons-left {
+    transform: rotate(180deg);
+  }
+ }
+
+ .item-data-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  p {
+    font-size: 26px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .avg-rating-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ }
+
+ .review-card {
+  width: 180px;
+  height: 180px;
+  padding: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+
+  p {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .review-score-box {
+    width: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    p {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+ }
+

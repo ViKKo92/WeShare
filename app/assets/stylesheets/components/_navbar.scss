@@ -1,12 +1,17 @@
 .navbar-container {
   width: 100%;
-  height: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: $custom-primary;
+ }
+
+ .navbar-content {
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: $custom-primary;
  }
 
  .navbar-search-container {
@@ -18,10 +23,11 @@
  .logo-container {
   display: flex;
   width: 80px;
+  align-items: center;
 
   .navbar-logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
   #navbar-logo-text {

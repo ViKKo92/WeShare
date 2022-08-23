@@ -20,45 +20,45 @@ User.destroy_all
 
   book = Item.new(
     name: Faker::Book.title,
-    description: Faker::Lorem.paragraph(sentence_count: 2),
+    description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Books",
-    price_per_day: Faker::Number.between(from: 0.1, to: 20.0),
+    price_per_day: Faker::Number.between(from: 0.1, to: 20.0).round(1),
     user_id: user.id
   )
   book.save!
 
   vehicle = Item.new(
     name: Faker::Vehicle.make_and_model,
-    description: Faker::Lorem.paragraph(sentence_count: 2),
+    description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Vehicles",
-    price_per_day: Faker::Number.between(from: 20.0, to: 400.0),
+    price_per_day: Faker::Number.between(from: 20.0, to: 400.0).round(1),
     user_id: user.id
   )
   vehicle.save!
 
   electronics = Item.new(
     name: "#{Faker::Device.manufacturer} #{Faker::Device.model_name}",
-    description: Faker::Lorem.paragraph(sentence_count: 2),
+    description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Electronics",
-    price_per_day: Faker::Number.between(from: 5.0, to: 25.0),
+    price_per_day: Faker::Number.between(from: 5.0, to: 25.0).round(1),
     user_id: user.id
   )
   electronics.save!
 
   room = Item.new(
-    name: "#{user}'s apartment with a nice #{Faker::House.room}",
-    description: Faker::Lorem.paragraph(sentence_count: 2),
+    name: "#{user.first_name}'s apartment with a nice #{Faker::House.room}",
+    description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Rooms",
-    price_per_day: Faker::Number.between(from: 50.0, to: 200.0),
+    price_per_day: Faker::Number.between(from: 50.0, to: 200.0).round(1),
     user_id: user.id
   )
   room.save!
 
   tool = Item.new(
     name: Faker::Construction.heavy_equipment,
-    description: Faker::Lorem.paragraph(sentence_count: 2),
+    description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Tools",
-    price_per_day: Faker::Number.between(from: 30.0, to: 120.0),
+    price_per_day: Faker::Number.between(from: 30.0, to: 120.0).round(1),
     user_id: user.id
   )
   tool.save!
