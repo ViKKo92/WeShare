@@ -1,13 +1,17 @@
 <div class="category-card-container-border">
   <div class="category-card-container">
+    <%= link_to items_path(category: "Weddings" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/wedding-icon.png" %>
       </div>
       <div class="category-card-content category-card-text">
         Weddings
-      </div>
+     </div>
     </div>
+    <% end %>
+
+<%= link_to items_path(category: "Clothing" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/clothing-icon.png"%>
@@ -16,6 +20,9 @@
         Clothing
       </div>
     </div>
+<% end %>
+
+<%= link_to items_path(category: "Vehicles" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/vehicle-icon.png" %>
@@ -24,6 +31,8 @@
         Vehicles
       </div>
     </div>
+<% end %>
+  <%= link_to items_path(category: "Tools" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/tool-icon.png" %>
@@ -32,6 +41,9 @@
         Tools
       </div>
     </div>
+<% end %>
+
+ <%= link_to items_path(category: "Sports" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/sport-icon.png" %>
@@ -40,14 +52,21 @@
         Sports
       </div>
     </div>
+<% end %>
+ <%= link_to items_path(category: "Books" ) do %>
     <div class="category-card">
+
       <div class="category-card-content">
         <%= image_tag "category_icons/book-icon.png" %>
       </div>
-      <div class="category-card-content category-card-text">
+      <div class="category-card-content category-card-text" >
         Books
       </div>
+
     </div>
+<% end %>
+
+ <%= link_to items_path(category: "Boats" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/boat-icon.png" %>
@@ -56,6 +75,8 @@
         Boats
       </div>
     </div>
+ <% end %>
+ <%= link_to items_path(category: "Rooms" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/room-icon.png"%>
@@ -64,6 +85,8 @@
         Rooms
       </div>
     </div>
+<% end %>
+<%= link_to items_path(category: "Electronics" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/electronics-icon.png" %>
@@ -72,6 +95,9 @@
         Electronics
       </div>
     </div>
+<% end %>
+
+<%= link_to items_path(category: "Jewellery" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/jewellery-icon.png" %>
@@ -80,6 +106,9 @@
         Jewellery
       </div>
     </div>
+<% end %>
+
+<%= link_to items_path(category: "Planes" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/plane-icon.png" %>
@@ -88,6 +117,8 @@
         Planes
       </div>
     </div>
+<% end %>
+<%= link_to items_path(category: "Bags" ) do %>
     <div class="category-card">
       <div class="category-card-content">
         <%= image_tag "category_icons/bag-icon.png" %>
@@ -96,5 +127,6 @@
         Bags
       </div>
     </div>
+    <% end %>
   </div>
 </div>

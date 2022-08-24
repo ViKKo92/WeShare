@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 15px;
+  text-decoration: none;
   border-bottom: 1px;
  }
 
@@ -32,4 +33,7 @@
   text-shadow: -0.3px -0.3px 0 #F4D06F, 0.3px -0.3px 0 #F4D06F, -0.3px 0.3px 0 #F4D06F, 0.3px 0.3px 0 #F4D06F;
   opacity: 1;
   transform: scale(1.08);
+}
+
+.category-card-text {
 }
