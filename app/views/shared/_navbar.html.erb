@@ -1,5 +1,6 @@
 <div class="navbar-container">
   <div class="navbar-content">
+    <%= link_to root_path, class:"text-decoration-none" do %>
     <div class="logo-container">
       <%= image_tag "logo.png", class: "navbar-logo" %>
       <div id=navbar-logo-text>
@@ -7,6 +8,7 @@
         <p>local.sharing.economy</p>
       </div>
     </div>
+    <% end %>
 
     <div class="navbar-search-container">
       <p style="color: white">placeholder for search form</p>

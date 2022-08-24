@@ -1,42 +1,41 @@
 <div class="main-container-flex">
-  <div class="itemshow-left">
-    <p>Placeholder - Back to search results</p>
-    <%= image_tag "power_drill_static.png", class: "itemshow-picture" %>
-  </div>
-  
-  <div class="itemshow-right">
-    <div class="itemshow-header">
-      <h1><%= @item.name %></h1>
-      <p><%= "posted by: #{@item.user.first_name} #{@item.user.first_name}" %></p>
+  <div class="itemshow">
+    <div class="itemshow-left">
+      <%= image_tag "power_drill_static.png", class: "itemshow-picture" %>
+      <br>
+      <%# link_to("<-- Back to overview", items_path) %>
     </div>
-    <div class="itemshow-description">
-      <p><%= @item.description %></p>
-    </div>
-    <div class="itemshow-reviews-wrapper">
-      <%= image_tag "scroll-chevrons.png", class: "itemshow-scroll-chevrons-left" %>
-      <% 3.times do %>
-        <div class="review-card">
-          <p>The power drill proved to be very useful for me, as I was not only able to fix my table but also wreck my enemies.</p>
-          <div class="review-score-box">
-            <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
-            <p>3</p>
-          </div>
-        </div>
-      <% end %>
-      <%= image_tag "scroll-chevrons.png", class: "itemshow-scroll-chevrons-right" %>
-    </div>
-    <div class="item-data-wrapper">
-      <p><%= "Starting at € #{@item.price_per_day}" %></p>
-      <div class="avg-rating-container">
-        <p>Rated at: </p>
-        <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
-        <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
-        <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
-        <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
-        <%= image_tag "empty-rating-star.png", class: "itemshow-empty-star" %>
-        <p>4.2</p>
+    
+    <div class="itemshow-right">
+      <div class="itemshow-header">
+        <h1><%= @item.name %></h1>
+        <p><%= "posted by: #{@item.user.first_name} #{@item.user.last_name}" %></p>
       </div>
+      <div class="itemshow-description">
+        <p><%= @item.description %></p>
+      </div>
+      <div class="itemshow-reviews-wrapper">
+        <%= image_tag "scroll-chevrons.png", class: "itemshow-scroll-chevrons-left" %>
+        <% 3.times do %>
+          <div class="review-card">
+            <p>I absolutely loved renting this item - it was much more convenient and affordable to rent it compared to buying it.</p>
+            <div class="review-score-box">
+              <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
+              <p>5</p>
+            </div>
+          </div>
+        <% end %>
+        <%= image_tag "scroll-chevrons.png", class: "itemshow-scroll-chevrons-right" %>
+      </div>
+      <div class="item-data-wrapper">
+        <p><%= "Starting at € #{@item.price_per_day}" %></p>
+        <div class="avg-rating-container">
+          <p>Rated at: </p>
+          <%= image_tag "full-rating-star.png", class: "itemshow-full-star" %>
+          <p>4.2</p>
+        </div>
+      </div>
+      <button class="button-primary" id="itemshow-share-button">Rent it</button>
     </div>
-    <button class="button-primary" id="itemshow-share-button">Rent it</button>
   </div>
 </div>
