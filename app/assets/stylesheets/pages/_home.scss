@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .home-banner {
   background: url("handshake-landing-image.jpg");
-  height: 75vh;
+  height: 79vh;
   background-size: 100%;
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -12,19 +12,26 @@
   text-align: center;
   height: 75vh;
   justify-content: space-around;
+  background-color: transparent;
 }
 
 .home-page-content {
   width: 100%;
 }
 
-h1 {
+.home-page-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-title {
   color: white;
   font-size: 50px;
   text-shadow: -1px -1px 0 #090909, 1px -1px 0 #090909, -1px 1px 0 #090909, 1px 1px 0 #090909;
 }
 
-h2 {
+.home-tag-line {
   color: white;
   font-size: 33px;
   text-shadow: -1px -1px 0 #090909, 1px -1px 0 #090909, -1px 1px 0 #090909, 1px 1px 0 #090909;
