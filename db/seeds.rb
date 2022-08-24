@@ -46,7 +46,7 @@ User.destroy_all
   electronics.save!
 
   room = Item.new(
-    name: "#{user.first_name}'s apartment with a nice #{Faker::House.room}",
+    name: "Apartment with a nice #{Faker::House.room}",
     description: Faker::Lorem.paragraph(sentence_count: 10),
     category: "Rooms",
     price_per_day: Faker::Number.between(from: 50.0, to: 200.0).round(1),
