@@ -1,16 +1,38 @@
- .itemshow-left {
+.itemshow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 2px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.itemshow-left {
   width: 600px;
   display: block;
   justify-content: left;
   margin-bottom: 15px;
 
-  p {
+  a {
     text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  a:hover {
+    color: $custom-tertiary;
+    font-weight: bold;
   }
 
   img {
-    width: 500px;
-    height: 500px;
+    width: 490px;
+    height: 490px;
+    margin-bottom: 15px;
+    border-radius: 2px;
   }
  }
 
@@ -29,19 +51,23 @@
  }
 
  .itemshow-header {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
+  justify-content: left;
 
   h1 {
     text-align: left;
+    color: $custom-primary;
+    font-size: 30px;
+    text-shadow: none;
     padding: 0px;
+    margin: 0px;
   }
 
   p {
-    font-size: 26px;
-    text-align: right;
+    font-size: 18px;
+    text-align: left;
+    color: darkgray;
+    font-style: italic;
     padding: 0px;
     margin: 0px;
   }
@@ -64,25 +90,6 @@
 
   .itemshow-scroll-chevrons-left {
     transform: rotate(180deg);
-  }
- }
-
- .item-data-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    font-size: 26px;
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .avg-rating-container {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
  }
 
@@ -111,5 +118,25 @@
       padding: 0px;
       margin: 0px;
     }
+  }
+ }
+ 
+ .item-data-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 0px 70px;
+  
+  p {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .avg-rating-container {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
  }
