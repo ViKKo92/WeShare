@@ -1,11 +1,15 @@
 <div class="home-banner">
   <div class="main-container-flex home-flex-aspects">
     <div class="home-page-content">
-      <h1>sustainable.affordable.social.</h1>
-      <h2>share your belongings for a brighter future</h2>
+      <h1 class="home-title">sustainable.affordable.social.</h1>
+      <h2 class="home-tag-line">share your belongings for a brighter future</h2>
     </div>
-    <div class="home-page-content">
-      <p>placeholder for search form</p>
+    <div class="home-page-button">
+      <div style="background-color:white; width:305px">
+        <%= link_to items_path do%>
+          <button class="button-primary">what's for rent?</button>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
