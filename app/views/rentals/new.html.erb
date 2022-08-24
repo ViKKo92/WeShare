@@ -1,0 +1,7 @@
+<h1>Rent this item</h1>
+
+<%= simple_form_for [@item, @rental] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, "Book this item", class: "button-primary w-100" %>
+<% end %>

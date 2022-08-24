@@ -1,0 +1,18 @@
+<div class="main-container-block">
+  <h1>All your rentals</h1>
+  <% @rentals.each do |rental| %>
+    <div class="rental-card">
+      <h3><%= "Your rental with ID: #{rental.id}" %></h3>
+      <p>Rented the following <%= rental.item.category %>: <%= rental.item.name %></p>
+      <p>Start date: <%= rental.start_date %></p>
+      <p>End date: <%= rental.end_date %></p>
+      <% @rental_days = (Date.parse("#{rental.end_date.year}-#{rental.end_date.month}-#{rental.end_date.day}") - Date.parse("#{rental.start_date.year}-#{rental.start_date.month}-#{rental.start_date.day}")).to_int + 1 %>
+      <p>Total days: <%= @rental_days %></p>
+      <p>Price per day: <%= rental.item.price_per_day %></p>
+      <p>Total price: <%= @rental_days * rental.item.price_per_day %></p>
+      <p>User offering: <%= "#{rental.item.user.first_name} #{rental.item.user.last_name}" %></p>
+      <p>User renting: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+    </div>
+    <%= link_to("More details of this rental", item_rental_path([rental.item, rental])) %>
+  <% end %>
+</div>
