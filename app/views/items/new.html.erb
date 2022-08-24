@@ -1,0 +1,13 @@
+<div class="main-container-block">
+  <div class="itemnew-form-container">
+    <h1>Add a new item to your offerings!</h1>
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :category, collection: ["Vehicles", "Tools", "Clothing", "Weddings", "Electronics", "Jewellery", "Bags", "Books", "Rooms", "Sports", "Boats", "Planes"] %>
+      <%= f.input :price_per_day %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, "Create new item", class: "button-primary w-100" %>
+    <% end %>
+  </div>
+</div>
