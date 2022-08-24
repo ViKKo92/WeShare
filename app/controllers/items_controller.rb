@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = Item.all
+
+if params[:category]
+    @items = Item.where(category: params[:category])
+else
+  @items = Item.all
+end
   end
 
   def show

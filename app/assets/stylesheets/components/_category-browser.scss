@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 15px;
+  text-decoration: none;
  }
 
 .category-card {
@@ -15,11 +16,13 @@
   flex-direction: column;
   color: #090909;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .category-card:hover {
   color: #F4D06F;
   text-shadow: -0.3px -0.3px 0 #8D9093, 0.3px -0.3px 0 #8D9093, -0.3px 0.3px 0 #8D9093, 0.3px 0.3px 0 #8D9093;
+  text-decoration: none;
 }
 
 .category-card-text {

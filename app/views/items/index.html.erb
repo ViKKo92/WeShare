@@ -3,6 +3,8 @@
   <div class="grid-container">
 
     <% @items.each do |item| %>
+      <%= link_to item_path(item.id), class: "text" do %>
+
       <div class="item-card">
         <%= image_tag "powerdrill.jpeg" %>
         <div class="card-body">
@@ -16,6 +18,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 
