@@ -26,3 +26,24 @@
   transform: scale(1.02);
   opacity: 1;
  }
+
+ .button-secondary {
+   width: 305px;
+   height: 80px;
+   background-color: $custom-secondary;
+   padding: 10px;
+   color: $custom-primary;
+   font-size: 20px;
+   font-weight: bold;
+   text-decoration: none;
+   border: none;
+   border-radius: 40px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   transition: all 0.2s ease;
+   opacity: 0.8;
+}
+.button-secondary:hover {
+ transform: scale(1.02);
+ opacity: 1;
+}
+
