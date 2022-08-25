@@ -40,7 +40,21 @@
           <p>4.2</p>
         </div>
       </div>
-      <%= link_to "Rent it!", new_item_rental_path(@item), class: "button-primary", id: "itemshow-share-button" %>
+      <div data-controller="bookingbar">
+        <div class="hidden" id="overlay" data-bookingbar-target="bookingbackground"></div>
+        <button class="button-primary w-100" id="itemshow-share-button" data-action="click->bookingbar#show">Book it!</button>
+        <div class="booking-container hidden" data-bookingbar-target="bookingform">
+          <div class="booking-container-content">
+            <h1>Book this item</h1>
+            <%= simple_form_for [@item, @rental] do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.button :submit, "Finalize booking", class: "button-primary w-100" %>
+            <% end %>
+            <button class="button-secondary w-100" data-action="click->bookingbar#hide">Back to item page</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
