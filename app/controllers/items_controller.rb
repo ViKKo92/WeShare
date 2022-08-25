@@ -5,6 +5,8 @@ class ItemsController < ApplicationController
 
 if params[:category]
     @items = Item.where(category: params[:category])
+elsif  params[:query]
+  @items = Item.search_by_name_and_description(params[:query])
 else
   @items = Item.all
 end
