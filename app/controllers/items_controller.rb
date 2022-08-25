@@ -12,6 +12,7 @@ end
 
   def show
     @item = Item.find(params[:id])
+    @rental = Rental.new()
   end
 
   def new
