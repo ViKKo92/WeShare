@@ -1,132 +1,166 @@
 <div class="category-card-container-border">
-  <div class="category-card-container">
-    <%= link_to items_path(category: "Weddings" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/wedding-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Weddings
-     </div>
-    </div>
-    <% end %>
 
-<%= link_to items_path(category: "Clothing" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/clothing-icon.png"%>
-      </div>
-      <div class="category-card-content">
-        Clothing
-      </div>
-    </div>
-<% end %>
+  <div class="category-object-container">
 
-<%= link_to items_path(category: "Vehicles" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/vehicle-icon.png" %>
+    <div>
+      <div>
+        <p class="column-title">Transport</p>
       </div>
-      <div class="category-card-content category-card-text">
-        Vehicles
-      </div>
-    </div>
-<% end %>
-  <%= link_to items_path(category: "Tools" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/tool-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Tools
-      </div>
-    </div>
-<% end %>
+      <div class="category-card-container">
+        <%= link_to items_path(category: "Vehicles" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/vehicle-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Vehicles
+          </div>
+        </div>
+        <% end %>
 
- <%= link_to items_path(category: "Sports" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/sport-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Sports
-      </div>
-    </div>
-<% end %>
- <%= link_to items_path(category: "Books" ) do %>
-    <div class="category-card">
+        <%= link_to items_path(category: "Planes" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/plane-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Planes
+          </div>
+        </div>
+        <% end %>
 
-      <div class="category-card-content">
-        <%= image_tag "category_icons/book-icon.png" %>
+        <%= link_to items_path(category: "Boats" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/boat-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Boats
+          </div>
+        </div>
+        <% end %>
       </div>
-      <div class="category-card-content category-card-text" >
-        Books
-      </div>
+    </div>
 
-    </div>
-<% end %>
+    <div>
+      <div>
+        <p class="column-title">Fashion</p>
+      </div>
+      <div class="category-card-container">
+        <%= link_to items_path(category: "Clothing" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/clothing-icon.png", class: "icon-format"%>
+          </div>
+          <div class="category-card-content category-card-text">
+            Clothing
+          </div>
+        </div>
+        <% end %>
 
- <%= link_to items_path(category: "Boats" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/boat-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Boats
-      </div>
-    </div>
- <% end %>
- <%= link_to items_path(category: "Rooms" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/room-icon.png"%>
-      </div>
-      <div class="category-card-content category-card-text">
-        Rooms
-      </div>
-    </div>
-<% end %>
-<%= link_to items_path(category: "Electronics" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/electronics-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Electronics
-      </div>
-    </div>
-<% end %>
+        <%= link_to items_path(category: "Jewellery" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/jewellery-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Jewellery
+          </div>
+        </div>
+        <% end %>
 
-<%= link_to items_path(category: "Jewellery" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/jewellery-icon.png" %>
-      </div>
-      <div class="category-card-content category-card-text">
-        Jewellery
+        <%= link_to items_path(category: "Bags" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/bag-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Bags
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-<% end %>
 
-<%= link_to items_path(category: "Planes" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/plane-icon.png" %>
+    <div>
+      <div>
+        <p class="column-title">Utilities</p>
       </div>
-      <div class="category-card-content category-card-text">
-        Planes
+      <div class="category-card-container">
+        <%= link_to items_path(category: "Electronics" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/electronics-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Electronics
+          </div>
+        </div>
+        <% end %>
+
+        <%= link_to items_path(category: "Tools" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/tool-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Tools
+          </div>
+        </div>
+        <% end %>
+
+        <%= link_to items_path(category: "Books" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/book-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text" >
+            Books
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-<% end %>
-<%= link_to items_path(category: "Bags" ) do %>
-    <div class="category-card">
-      <div class="category-card-content">
-        <%= image_tag "category_icons/bag-icon.png" %>
+
+    <div>
+      <div>
+        <p class="column-title">Other</p>
       </div>
-      <div class="category-card-content category-card-text">
-        Bags
+      <div class="category-card-container">
+        <%= link_to items_path(category: "Weddings" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/wedding-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Weddings
+        </div>
+        </div>
+        <% end %>
+
+        <%= link_to items_path(category: "Sports" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/sport-icon.png", class: "icon-format" %>
+          </div>
+          <div class="category-card-content category-card-text">
+            Sports
+          </div>
+        </div>
+        <% end %>
+
+        <%= link_to items_path(category: "Rooms" ) do %>
+        <div class="category-card">
+          <div class="category-card-content">
+            <%= image_tag "category_icons/room-icon.png", class: "icon-format"%>
+          </div>
+          <div class="category-card-content category-card-text">
+            Rooms
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
+
   </div>
 </div>
