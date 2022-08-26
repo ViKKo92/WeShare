@@ -2,7 +2,13 @@
   <div class="grid-container-profile">
     <div class="profile-format-user">
       <div class="profile-info-user">
-        <%= image_tag("generic-profile-picture-2.jpg", class: "avatar-large")%>
+        <div>
+          <% if user_signed_in? && current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-large"%>
+          <% else %>
+            <%= image_tag "empty-avatar.png", class: "avatar-large" %>
+          <% end %>
+        </div>
         <h1 class="welcome-title"><%= "Welcome #{current_user.first_name}" %></h1>
       </div>
       <div class="grid-container-content">
@@ -17,9 +23,9 @@
         <p style="grid-column:2; grid-row:4"><%= "#{current_user.home_address}" %></p>
         <p style="grid-column:2; grid-row:5"><%= "#{current_user.id}" %></p>
       </div>
-      <div class="profile-info-user">
-        <%= link_to new_item_path do %>
-          <button class="button-primary">Create new item</button>
+      <div class="profile-info-user" style="margin-top:30px;">
+        <%= link_to destroy_user_session_path, data: { "turbo-method": :delete } do %>
+          <button class="button-secondary">Sign Out</button>
         <% end %>
       </div>
     </div>
@@ -28,68 +34,88 @@
         <% @rentals = Rental.where(user: current_user)%>
         <% @rentals.each do |rental| %>
           <div class="rental-card">
-            <div>
+            <div style="height: 100%">
               <% if rental.item.photo.attached? %>
                 <%= cl_image_tag rental.item.photo.key, height: 150, width: 150, crop: :fill %>
               <% else %>
-                <%= image_tag "power_drill_static.png", height: 150, width: 150, crop: :fill %>
+                <%= image_tag "item-placeholder.png", height: 150, width: 150, crop: :fill %>
               <% end %>
             </div>
-            <div>
+            <div class="rental-card-content-container">
               <h3><%= rental.item.name %></h3>
               <div class="rental-card-info-grid">
-                <div>
-                  <p>Start date: <%= rental.start_date %></p>
-                  <p>End date: <%= rental.end_date %></p>
-                  <% @rental_days = (Date.parse("#{rental.end_date.year}-#{rental.end_date.month}-#{rental.end_date.day}") - Date.parse("#{rental.start_date.year}-#{rental.start_date.month}-#{rental.start_date.day}")).to_int + 1 %>
-                  <p><%= "No. of days: #{@rental_days}" %></p>
+                <div class="rental-card-content">
+                  <p><em>Start date: </em><%= rental.start_date %></p>
+                  <br>
+                  <p><em>End date: </em><%= rental.end_date %></p>
                 </div>
-                <div>
-                  <p><%= "Rental ID: #{rental.id}" %></p>
-                  <p>Total price: €<%= @rental_days * rental.item.price_per_day %></p>
-                  <p>Renting from user: <%= "#{rental.item.user.first_name} #{rental.item.user.last_name}" %></p>
+                <div class="rental-card-content rental-card-extras">
+                  <% @rental_days = (Date.parse("#{rental.end_date.year}-#{rental.end_date.month}-#{rental.end_date.day}") - Date.parse("#{rental.start_date.year}-#{rental.start_date.month}-#{rental.start_date.day}")).to_int + 1 %>
+                  <p><em>No. of days: </em><%= "#{@rental_days}" %></p>
+                  <br>
+                  <p><em>Total cost:</em> € <strong><%= @rental_days * rental.item.price_per_day %></strong></p>
+                </div>
+                <div class="rental-card-icons">
+                  <%= link_to item_rental_path(rental.item, rental) do %>
+                    <div style="display:flex; justify-content:center; align-content:center">
+                      <%= image_tag "info.png", class: "rental-icon-format" %>
+                    </div>
+                  <% end %>
+                  <%= link_to item_rental_path(rental.item, rental), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this rental?"} do %>
+                    <div style="display:flex; justify-content:center; align-content:center">
+                      <%= image_tag "trash.png", class: "rental-icon-format" %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>
-            <div class="rental-card-links">
-              <%= link_to "More details of this rental", item_rental_path(rental.item, rental) %>
-              <%= link_to "Cancel this rental", item_rental_path(rental.item, rental), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
           </div>
         <% end %>
-      <h1><%= "#{current_user.first_name} #{current_user.last_name}'s offerings" %></h1>
+      <div id="second-title">
+        <h1><%= "#{current_user.first_name} #{current_user.last_name}'s offerings" %></h1>
+        <%= link_to new_item_path do %>
+          <button class="button-primary">Create new item</button>
+        <% end %>
+      </div>
         <% @items = Item.where(user: current_user)%>
         <% @items.each do |item| %>
           <% @offerings = Rental.where(item: item) %>
           <% @offerings.each do |offering| %>
             <div class="rental-card">
-              <div>
+              <div style="height: 100%">
                 <% if offering.item.photo.attached? %>
                   <%= cl_image_tag offering.item.photo.key, height: 150, width: 150, crop: :fill %>
                 <% else %>
-                  <%= image_tag "power_drill_static.png", height: 150, width: 150, crop: :fill %>
+                  <%= image_tag "item-placeholder.png", height: 150, width: 150, crop: :fill %>
                 <% end %>
               </div>
-              <div>
+              <div class="rental-card-content-container">
                 <h3><%= offering.item.name %></h3>
                 <div class="rental-card-info-grid">
-                  <div>
-                    <p>Start date: <%= offering.start_date %></p>
-                    <p>End date: <%= offering.end_date %></p>
-                    <% @offer_days = (Date.parse("#{offering.end_date.year}-#{offering.end_date.month}-#{offering.end_date.day}") - Date.parse("#{offering.start_date.year}-#{offering.start_date.month}-#{offering.start_date.day}")).to_int + 1 %>
-                    <p><%= "No. of days: #{@offer_days}" %></p>
+                  <div class="rental-card-content">
+                    <p><em>Start date: </em><%= offering.start_date %></p>
+                    <br>
+                    <p><em>End date: </em><%= offering.end_date %></p>
                   </div>
-                  <div>
-                    <p><%= "Offering ID: #{offering.id}" %></p>
-                    <p>Total price: €<%= @offer_days * offering.item.price_per_day %></p>
-                    <p>Renting to user: <%= "#{offering.user.first_name} #{offering.user.last_name}" %></p>
+                  <div class="rental-card-content rental-card-extras">
+                    <% @offer_days = (Date.parse("#{offering.end_date.year}-#{offering.end_date.month}-#{offering.end_date.day}") - Date.parse("#{offering.start_date.year}-#{offering.start_date.month}-#{offering.start_date.day}")).to_int + 1 %>
+                    <p><em>No. of days: </em><%= "#{@offer_days}" %></p>
+                    <br>
+                    <p><em>Total income:</em> € <strong><%= @offer_days * offering.item.price_per_day %></strong></p>
+                  </div>
+                  <div class="rental-card-icons">
+                    <%= link_to item_rental_path(offering.item, offering) do %>
+                      <div style="display:flex; justify-content:center; align-content:center">
+                        <%= image_tag "info.png", class: "rental-icon-format" %>
+                      </div>
+                    <% end %>
+                    <%= link_to item_rental_path(offering.item, offering), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this rental?"} do %>
+                      <div style="display:flex; justify-content:center; align-content:center">
+                        <%= image_tag "trash.png", class: "rental-icon-format" %>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
-              </div>
-              <div>
-                <%= link_to "More details of this rental", item_rental_path(offering.item, offering) %>
-                <br>
-                <%= link_to "Cancel this rental", item_rental_path(offering.item, offering), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               </div>
             </div>
           <% end %>
