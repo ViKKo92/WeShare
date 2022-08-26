@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: WeShare_production
   username: WeShare
   password: <%= ENV["WESHARE_DATABASE_PASSWORD"] %>
