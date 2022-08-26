@@ -1,9 +1,9 @@
 .grid-container-profile {
   display: grid;
-  grid-template-columns: 320px auto;
+  grid-template-columns: 400px auto;
   // grid-template-rows: max-content;
   width: 100%;
-  grid-gap: 30px;
+  grid-gap: 75px;
   background-color: #fff;
   height: 100%;
 }
@@ -13,7 +13,7 @@
   grid-template-columns: 125px auto;
   // grid-template-rows: auto auto auto auto auto;
   width: 100%;
-  grid-gap: 5px;
+  grid-gap: 0px;
 }
 
 .profile-format-user {
@@ -39,31 +39,106 @@
 
 .welcome-title {
   font-size: 33px;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#second-title {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .rental-card {
   display: grid;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   height: 150px;
   width: 100%;
-  grid-template-columns: 150px auto 100px;
+  grid-template-columns: 150px auto;
   grid-gap: 10px;
-  border: solid 1px #090909;
-  border-radius: 2px;
+  // border: solid 1px #090909;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 2px;
   overflow: hidden;
+}
+
+.rental-card-content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.rental-card-content-container h3 {
+  margin: 0;
 }
 
 .rental-card-info-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33% 33% 33%;
   grid-gap: 10px;
+  width: 100%;
+  position: relative;
 }
 
-.rental-card-links {
+.rental-card-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.rental-card-content p {
+  margin: 0;
+}
+
+.rental-card-extras {
+  align-content: center;
+}
+
+.rental-card-icons {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+  width: 75px;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+}
+
+.rental-icon-format {
+  height: 25px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.rental-icon-format:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.button-create {
+  width: 150px;
+  height: 40px;
+  background-color: $custom-secondary;
+  padding: 5px;
+  color: $custom-primary;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.button-create:hover {
+transform: scale(1.02);
+opacity: 1;
 }
