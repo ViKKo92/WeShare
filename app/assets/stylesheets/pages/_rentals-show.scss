@@ -1,0 +1,39 @@
+.main-rental-show {
+
+  width: 500px;
+  justify-content: center;
+  text-align: left;
+  text-align: center;
+  margin: auto;
+
+  h2, h3 {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  p {
+    font-size: 12px;
+    line-height: normal;
+  }
+  }
+
+  .backround-pic {
+    width: 550px;
+    height: 100%;
+    background-image: url("receipt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .very-main-rental-show{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    width: 100%;
+  }

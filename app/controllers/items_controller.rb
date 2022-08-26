@@ -4,11 +4,11 @@ class ItemsController < ApplicationController
   def index
 
 if params[:category]
-    @items = Item.where(category: params[:category])
+    @items = Item.where(category: params[:category]).order(:price_per_day)
 elsif  params[:query]
-  @items = Item.search_by_name_and_description(params[:query])
+  @items = Item.search_by_name_and_description(params[:query]).order(:price_per_day)
 else
-  @items = Item.all
+  @items = Item.all.order(:price_per_day)
 end
   end
 
