@@ -53,7 +53,7 @@
                   <% @rental_days = (Date.parse("#{rental.end_date.year}-#{rental.end_date.month}-#{rental.end_date.day}") - Date.parse("#{rental.start_date.year}-#{rental.start_date.month}-#{rental.start_date.day}")).to_int + 1 %>
                   <p><em>No. of days: </em><%= "#{@rental_days}" %></p>
                   <br>
-                  <p><em>Total cost:</em> € <strong><%= @rental_days * rental.item.price_per_day %></strong></p>
+                  <p><em>Total cost:</em> € <strong><%= (@rental_days * rental.item.price_per_day).round(2) %></strong></p>
                 </div>
                 <div class="rental-card-icons">
                   <%= link_to item_rental_path(rental.item, rental) do %>
@@ -101,7 +101,7 @@
                     <% @offer_days = (Date.parse("#{offering.end_date.year}-#{offering.end_date.month}-#{offering.end_date.day}") - Date.parse("#{offering.start_date.year}-#{offering.start_date.month}-#{offering.start_date.day}")).to_int + 1 %>
                     <p><em>No. of days: </em><%= "#{@offer_days}" %></p>
                     <br>
-                    <p><em>Total income:</em> € <strong><%= @offer_days * offering.item.price_per_day %></strong></p>
+                    <p><em>Total income:</em> € <strong><%= (@offer_days * offering.item.price_per_day).round(2) %></strong></p>
                   </div>
                   <div class="rental-card-icons">
                     <%= link_to item_rental_path(offering.item, offering) do %>
