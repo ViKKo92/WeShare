@@ -18,7 +18,7 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     @rental.item = Item.find(params[:item_id])
     if @rental.save
-      redirect_to item_rental_path(@rental.item, @rental)
+      redirect_to edit_user_registration_path
     else
       render :new
     end
@@ -27,7 +27,7 @@ class RentalsController < ApplicationController
   def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
-    redirect_to item_rentals_path, status: :see_other
+    redirect_to edit_user_registration_path, status: :see_other
   end
 
   private

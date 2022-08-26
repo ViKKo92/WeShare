@@ -5,7 +5,8 @@
         <%= cl_image_tag @item.photo.key, height: 500, width: 500, crop: :fill %>
       <% else %>
         <%# <%= image_tag "https://source.unsplash.com/random/500x500/?#{@item.category}" %>
-        <%= image_tag "power_drill_static.png", class: "itemshow-picture" %>
+        <%# <%= image_tag "power_drill_static.png", class: "itemshow-picture" %>
+        <%= image_tag "item-placeholder.png", class: "itemshow-picture" %>
       <% end %>
       <br>
       <%# link_to("<-- Back to overview", items_path) %>

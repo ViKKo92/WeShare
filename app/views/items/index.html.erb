@@ -6,7 +6,13 @@
       <%= link_to item_path(item.id), class: "text" do %>
 
       <div class="item-card">
-        <%= image_tag "powerdrill.jpg" %>
+        <div class="item-card-photo-wrapper">
+          <% if item.photo.attached? %>
+            <%= cl_image_tag item.photo.key, height: 500, width: 500, crop: :fill %>
+          <% else %>
+            <%= image_tag "item-placeholder.png", class: "index-card-image" %>
+          <% end %>
+        </div>
         <div class="card-body">
           <div>
             <h5 class="card-title"><b><%= item.name %></b></h5>
