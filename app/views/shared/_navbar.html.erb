@@ -20,7 +20,11 @@
 
     <%= link_to edit_user_registration_path do %>
     <div class="avatar-container">
-      <%= image_tag "generic-profile-picture-2.jpg", class: "avatar-bordered" %>
+      <% if user_signed_in? && current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-bordered"%>
+      <% else %>
+        <%= image_tag "empty-avatar.png", class: "avatar-bordered" %>
+      <% end %>  
     </div>
     <% end %>
   </div>
