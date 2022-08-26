@@ -1,13 +1,28 @@
-<h1>Details of your rental</h1>
-<h3><%= "Your @rental with ID: #{@rental.id}" %></h3>
-<p>Rented the following <%= @rental.item.category %>: <%= @rental.item.name %></p>
-<p>Start date: <%= @rental.start_date %></p>
-<p>End date: <%= @rental.end_date %></p>
-<% @rental_days = (Date.parse("#{@rental.end_date.year}-#{@rental.end_date.month}-#{@rental.end_date.day}") - Date.parse("#{@rental.start_date.year}-#{@rental.start_date.month}-#{@rental.start_date.day}")).to_int + 1 %>
-<p>Total days: <%= @rental_days %></p>
-<p>Price per day: <%= @rental.item.price_per_day %></p>
-<p>Total price: <%= @rental_days * @rental.item.price_per_day %></p>
-<p>User offering: <%= "#{@rental.item.user.first_name} #{@rental.item.user.last_name}" %></p>
-<p>User renting: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-<%= link_to("Back to all your rentals", item_rentals_path) %>
-<%= link_to "Cancel this rental", item_rental_path(@item, @rental), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<div class="very-main-rental-show"style="text-align:center;" >
+  <div class="backround-pic">
+    <div class="main-rental-show"style="text-align:center;" >
+      <h2><strong>Order Confirmed</strong></h2>
+      <h3>Details of your rental</h3>
+
+
+      <p><%= "Your rental with ID: #{@rental.id}" %></p>
+
+      <p>Rented the following <%= @rental.item.category %>: <%= @rental.item.name %></p>
+      <p>Start date: <%= @rental.start_date %></p>
+      <p>End date: <%= @rental.end_date %></p>
+      <% @rental_days = (Date.parse("#{@rental.end_date.year}-#{@rental.end_date.month}-#{@rental.end_date.day}") - Date.parse("#{@rental.start_date.year}-#{@rental.start_date.month}-#{@rental.start_date.day}")).to_int + 1 %>
+      <p>Total days: <%= @rental_days %></p>
+
+      <p>Price per day: <%= @rental.item.price_per_day %></p>
+      <p>-------------- </p>
+      <p><strong>Total price: <%= @rental_days * @rental.item.price_per_day %></strong></p>
+      <p>User offering: <%= "#{@rental.item.user.first_name} #{@rental.item.user.last_name}" %></p>
+      <p>User renting: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+      <%= link_to("Back to all your rentals", edit_user_registration_path) %>
+      <br>
+      <%= link_to "Cancel this rental", item_rental_path(@item, @rental), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+    </div>
+  </div>
+</div>
