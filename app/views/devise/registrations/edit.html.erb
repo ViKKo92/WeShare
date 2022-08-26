@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="profile-format-rentals">
-      <h1><%= "#{current_user.first_name} #{current_user.last_name}'s rentals" %></h1>
+      <h2 style="margin-bottom:10px"><em><strong><%= "#{current_user.first_name} #{current_user.last_name}'s rentals" %></strong></em></h1>
         <% @rentals = Rental.where(user: current_user)%>
         <% @rentals.each do |rental| %>
           <div class="rental-card">
@@ -72,9 +72,9 @@
           </div>
         <% end %>
       <div id="second-title">
-        <h1><%= "#{current_user.first_name} #{current_user.last_name}'s offerings" %></h1>
+        <h2 style="margin-bottom:0px"><em><strong><%= "#{current_user.first_name} #{current_user.last_name}'s offerings" %></strong></em></h1>
         <%= link_to new_item_path do %>
-          <button class="button-primary">Create new item</button>
+          <button class="button-create">Create item</button>
         <% end %>
       </div>
         <% @items = Item.where(user: current_user)%>
